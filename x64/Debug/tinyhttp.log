@@ -1,0 +1,7 @@
+﻿  header.cpp
+D:\github\CPlusStorage\tinyhttp\header.cpp(36,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\header.cpp(40,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\header.cpp(44,9): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+D:\github\CPlusStorage\tinyhttp\header.cpp(47,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\header.cpp(51,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  tinyhttp.vcxproj -> D:\github\CPlusStorage\tinyhttp\x64\Debug\tinyhttp.exe
