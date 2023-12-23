@@ -9,12 +9,15 @@ Header::Header(int client, string fileName, string pagestate) :client(client), f
 const void Header::get_HeadType(string fileName) {
 	//decide the head type
 	//to do
-	string fileType = fileName.substr(fileName.find_last_of('.')+1);
-	if (fileType == "html") { HeadType = "text/html"; }
-	else if (fileType == "css") { HeadType = "text/css"; }
-	else if (fileType == "jpg") { HeadType = "image/jpg"; }
-	else if (fileType == "png") { HeadType = "image/png"; }
-	else if (fileType == "js") { HeadType = "application/x-javascript"; }
+	if (fileName != "") {
+		string fileType = fileName.substr(fileName.find_last_of('.') + 1);
+		if (fileType == "html") { HeadType = "text/html"; }
+		else if (fileType == "css") { HeadType = "text/css"; }
+		else if (fileType == "jpg") { HeadType = "image/jpg"; }
+		else if (fileType == "png") { HeadType = "image/png"; }
+		else if (fileType == "js") { HeadType = "application/x-javascript"; }
+	}
+	
 
 }
 void Header::SendHeader() {

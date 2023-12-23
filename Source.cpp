@@ -78,7 +78,9 @@ int read_line(int sock, char* buff, int size) {
 void unsupported_method(int client) {
 	//to do
 	char buf[1024];
-
+	Header headerus(client,"", "UNSUPPORTED");
+	headerus.SendHeader();
+	/*
 	strcpy_s(buf, "HTTP/1.0 501 Method Not Implemented\r\n");
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "Server: tinyhttp / 0.1\r\n");
@@ -87,6 +89,7 @@ void unsupported_method(int client) {
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "\r\n");
 	send(client, buf, strlen(buf), 0);
+	*/
 	strcpy_s(buf, "<HTML><HEAD><TITLE>Method Not Implemented\r\n");
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "</TITLE></HEAD>\r\n");
@@ -98,7 +101,11 @@ void unsupported_method(int client) {
 }
 void not_found(int client) {
 	//to do
+	Header headernf(client, "", "NOTFOUND");
+	headernf.SendHeader();
 	char buff[1024];
+	/*
+	
 	strcpy_s(buff, "HTTP/1.1 404 NOT FOUND\r\n");
 	send(client, buff, strlen(buff), 0);
 	strcpy_s(buff, "Server: tinyhttp/0.1\r\n");
@@ -106,7 +113,10 @@ void not_found(int client) {
 	strcpy_s(buff, "Content-Type:text/html\r\n");
 	send(client, buff, strlen(buff), 0);
 	strcpy_s(buff, "\r\n");
+	
+	
 	send(client, buff, strlen(buff), 0);
+	*/
 	strcpy_s(buff,
 		"<HTML>							\
 		<TITLE>NOT FOUND </TITLE>		\
@@ -130,6 +140,7 @@ const char* gethead_type(const char* fileName) {
 
 
 }
+/*
 void headers(int client, const char* ret) {
 	//send headers
 	char buff[1024];
@@ -146,6 +157,7 @@ void headers(int client, const char* ret) {
 	strcpy_s(buff, "\r\n");
 	send(client, buff, strlen(buff), 0);
 }
+*/
 void cat(int client, FILE* resource) {
 	//send file
 	char buff[4096];
@@ -185,6 +197,8 @@ void server_file(int client, const char* fileName) {
 	//read and send file
 	FILE* resource;
 	if (fopen_s(&resource, fileName, "rb") != 0) {
+		
+		
 		not_found(client);
 	}
 	else {
@@ -246,6 +260,7 @@ DWORD WINAPI accept_request(LPVOID arg) {
 		while (number_char>0 && strcmp(buff,"\n")) {
 			read_line(client, buff, sizeof(buff));
 		}
+		
 		not_found(client);
 	}
 	else { //if found, connect index.html
