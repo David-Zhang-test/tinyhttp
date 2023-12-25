@@ -34,7 +34,7 @@ void Logger::warn(LogEvent::ptr event) {
 	log(LogLevel::LEVEL::WARNING, event);
 }
 void Logger::error(LogEvent::ptr event) {
-	log(LogLevel::LEVEL::ERROR, event);
+	log(LogLevel::LEVEL::ERRORING, event);
 }
 void Logger::fatal(LogEvent::ptr event) {
 	log(LogLevel::LEVEL::FATAL, event);

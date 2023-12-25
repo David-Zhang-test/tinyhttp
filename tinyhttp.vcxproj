@@ -127,13 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BindingSocket.cpp" />
+    <ClCompile Include="ConnectionSocket.cpp" />
     <ClCompile Include="header.cpp" />
+    <ClCompile Include="ListeningSocket.cpp" />
     <ClCompile Include="log.cpp" />
     <ClCompile Include="SimpleSocket.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BindingSocket.h" />
+    <ClInclude Include="ConnectionSocket.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="ListeningSocket.h" />
     <ClInclude Include="log.h" />
     <ClInclude Include="SimpleSocket.h" />
   </ItemGroup>

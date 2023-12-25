@@ -9,14 +9,14 @@ using namespace std;
 class LogLevel {
 public:
 	enum LEVEL {
-		DEBUG = 1, INFO, WARNING, ERROR, FATAL
+		DEBUG = 1, INFO, WARNING, ERRORING, FATAL
 	};
 };
 //log data
 class LogEvent {
 public:
 	typedef shared_ptr<LogEvent> ptr;
-	LogEvent();
+	//LogEvent();
 private:
 	const char* FileName = nullptr;
 	int LineNumber = 0;
@@ -33,7 +33,7 @@ class Appender {
 public:
 	typedef shared_ptr<Appender> ptr;
 	virtual ~Appender() {};
-	void log(LogLevel::LEVEL level, LogEvent::ptr event);
+	void log(LogLevel::LEVEL level, LogEvent::ptr event) {};
 private:
 	LogLevel::LEVEL level;
 };
@@ -68,7 +68,7 @@ private:
 class Formatter {
 public:
 	typedef shared_ptr<Formatter> ptr;
-	string format(LogEvent::ptr event);
+	//string format(LogEvent::ptr event);
 private:
 
 };
