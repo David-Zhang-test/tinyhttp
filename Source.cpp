@@ -6,6 +6,7 @@
 
 #pragma comment(lib, "WS2_32.lib")
 #include "header.h"
+#include "log.h"
 
 #define PRINTF(str) printf("[%s - %d]"#str": %s\n",__func__, __LINE__, str);
 
@@ -140,24 +141,7 @@ const char* gethead_type(const char* fileName) {
 
 
 }
-/*
-void headers(int client, const char* ret) {
-	//send headers
-	char buff[1024];
-	strcpy_s(buff, "HTTP/1.1 200 OK\r\n");
-	send(client, buff, strlen(buff), 0);
-	strcpy_s(buff, "Server: tinyhttp/0.1\r\n");
-	send(client, buff, strlen(buff), 0);
-	char buf[1024];
-	sprintf_s(buf, "Content-Type:%s\r\n",ret);
-	//strcpy_s(buff, "Content-Type:application/octet-stream\n");
-	send(client, buf, strlen(buf), 0);
-	strcpy_s(buff, "Content-Disposition: inline\r\n");
-	send(client, buff, strlen(buff), 0);
-	strcpy_s(buff, "\r\n");
-	send(client, buff, strlen(buff), 0);
-}
-*/
+
 void cat(int client, FILE* resource) {
 	//send file
 	char buff[4096];

@@ -17,6 +17,4 @@ private:
 	string fileName;
 	string HeadType;
 	const void get_HeadType(string fileName);
-
-
 };
