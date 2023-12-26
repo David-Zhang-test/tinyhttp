@@ -7,6 +7,7 @@
 #pragma comment(lib, "WS2_32.lib")
 #include "header.h"
 #include "log.h"
+#include "sockets/libc-sockets.h"
 
 #define PRINTF(str) printf("[%s - %d]"#str": %s\n",__func__, __LINE__, str);
 
@@ -16,7 +17,7 @@ void error_die(const char* str) {
 }
 
 int startup(int* port) {
-	//
+	//startup
 	WSADATA data;
 	INT32 ret = WSAStartup(MAKEWORD(1, 1), &data);
 	if (ret != 0) { error_die("WSAStartup"); }

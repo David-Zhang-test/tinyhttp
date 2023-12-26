@@ -127,21 +127,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BindingSocket.cpp" />
-    <ClCompile Include="ConnectionSocket.cpp" />
     <ClCompile Include="header.cpp" />
-    <ClCompile Include="ListeningSocket.cpp" />
     <ClCompile Include="log.cpp" />
-    <ClCompile Include="SimpleSocket.cpp" />
+    <ClCompile Include="server\SimpleServer.cpp" />
+    <ClCompile Include="sockets\BindingSocket.cpp" />
+    <ClCompile Include="sockets\ConnectionSocket.cpp" />
+    <ClCompile Include="sockets\ListeningSocket.cpp" />
+    <ClCompile Include="sockets\SimpleSocket.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BindingSocket.h" />
-    <ClInclude Include="ConnectionSocket.h" />
     <ClInclude Include="header.h" />
-    <ClInclude Include="ListeningSocket.h" />
     <ClInclude Include="log.h" />
-    <ClInclude Include="SimpleSocket.h" />
+    <ClInclude Include="server\SimpleServer.h" />
+    <ClInclude Include="sockets\BindingSocket.h" />
+    <ClInclude Include="sockets\ConnectionSocket.h" />
+    <ClInclude Include="sockets\libc-sockets.h" />
+    <ClInclude Include="sockets\ListeningSocket.h" />
+    <ClInclude Include="sockets\SimpleSocket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libc-sockets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

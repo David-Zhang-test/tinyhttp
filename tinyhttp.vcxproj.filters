@@ -24,16 +24,19 @@
     <ClCompile Include="log.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleSocket.cpp">
+    <ClCompile Include="server\SimpleServer.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="BindingSocket.cpp">
+    <ClCompile Include="sockets\BindingSocket.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConnectionSocket.cpp">
+    <ClCompile Include="sockets\ConnectionSocket.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="ListeningSocket.cpp">
+    <ClCompile Include="sockets\ListeningSocket.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sockets\SimpleSocket.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,17 +47,28 @@
     <ClInclude Include="log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleSocket.h">
+    <ClInclude Include="sockets\BindingSocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BindingSocket.h">
+    <ClInclude Include="sockets\ConnectionSocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConnectionSocket.h">
+    <ClInclude Include="sockets\libc-sockets.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ListeningSocket.h">
+    <ClInclude Include="sockets\ListeningSocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sockets\SimpleSocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="server\SimpleServer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libc-sockets.h">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
