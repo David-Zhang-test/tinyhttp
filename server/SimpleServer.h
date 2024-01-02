@@ -14,4 +14,5 @@ private:
 	virtual void accepter() = 0;
 	virtual void handler() = 0;
 	virtual void responder() = 0;
+	// void random_port(); //unfortunately, the random port function has not been done yet
 };

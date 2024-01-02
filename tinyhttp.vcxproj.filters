@@ -39,6 +39,12 @@
     <ClCompile Include="sockets\SimpleSocket.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\Server.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -65,10 +71,8 @@
     <ClInclude Include="server\SimpleServer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="libc-sockets.h">
+    <ClInclude Include="server\Server.h">
       <Filter>Header Files</Filter>
-    </None>
+    </ClInclude>
   </ItemGroup>
 </Project>

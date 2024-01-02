@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClCompile Include="header.cpp" />
     <ClCompile Include="log.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="server\Server.cpp" />
     <ClCompile Include="server\SimpleServer.cpp" />
     <ClCompile Include="sockets\BindingSocket.cpp" />
     <ClCompile Include="sockets\ConnectionSocket.cpp" />
@@ -139,15 +141,13 @@
   <ItemGroup>
     <ClInclude Include="header.h" />
     <ClInclude Include="log.h" />
+    <ClInclude Include="server\Server.h" />
     <ClInclude Include="server\SimpleServer.h" />
     <ClInclude Include="sockets\BindingSocket.h" />
     <ClInclude Include="sockets\ConnectionSocket.h" />
     <ClInclude Include="sockets\libc-sockets.h" />
     <ClInclude Include="sockets\ListeningSocket.h" />
     <ClInclude Include="sockets\SimpleSocket.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="libc-sockets.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

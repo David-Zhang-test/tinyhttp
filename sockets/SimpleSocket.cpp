@@ -3,7 +3,10 @@
 
 //default constructor
 SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long interface_s) {
-	
+	// initialize wsadata
+	WSADATA data;
+	int ret = WSAStartup(MAKEWORD(1, 1), &data);
+	if (ret != 0) { perror("WSAStartup"); }
 	//define address
 	address.sin_addr.s_addr = htonl(interface_s);
 	address.sin_family = domain;

@@ -278,7 +278,7 @@ DWORD WINAPI accept_request(LPVOID arg) {
 	return 0;
 }
 
-int main() {
+int main1() {
 	//starting http server
 	int port = 80;
 	int server_sock = startup(&port);

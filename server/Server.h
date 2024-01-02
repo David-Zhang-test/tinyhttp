@@ -13,4 +13,5 @@ private:
 	void handler();
 	void responder();
 	int client_sock;
+	int server_port;
 };
