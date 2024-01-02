@@ -1,21 +1,32 @@
+// 
+// This is the original version using C (not C++) to create a server.
+// With socket, thread, it can perform static webpages well. But without cgi, it's still not available to answer information input, so dynamic webpage(x).
+// The original model is tinyhttp (https://tinyhttpd.sourceforge.net/): a lite httpserver written by James David in 1999.
+// To study and acquire a FULL understanding, I rewrite it using C++ as the next version.
+//
+// 23.12.26
+// Daivd John
+// 
+
+
+// Include
 #include<stdint.h>
 #include<stdio.h>
-
 #include<sys/types.h>
 #include<sys/stat.h>
-
+#include<WinSock2.h>
 #pragma comment(lib, "WS2_32.lib")
-#include "header.h"
-#include "log.h"
-#include "sockets/libc-sockets.h"
 
+// Standard Output Define
 #define PRINTF(str) printf("[%s - %d]"#str": %s\n",__func__, __LINE__, str);
 
+// Error Function
 void error_die(const char* str) {
 	perror(str);
 	exit(1);
 }
 
+// Startup Function
 int startup(int* port) {
 	//startup
 	WSADATA data;
@@ -80,9 +91,7 @@ int read_line(int sock, char* buff, int size) {
 void unsupported_method(int client) {
 	//to do
 	char buf[1024];
-	Header headerus(client,"", "UNSUPPORTED");
-	headerus.SendHeader();
-	/*
+
 	strcpy_s(buf, "HTTP/1.0 501 Method Not Implemented\r\n");
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "Server: tinyhttp / 0.1\r\n");
@@ -91,7 +100,6 @@ void unsupported_method(int client) {
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "\r\n");
 	send(client, buf, strlen(buf), 0);
-	*/
 	strcpy_s(buf, "<HTML><HEAD><TITLE>Method Not Implemented\r\n");
 	send(client, buf, strlen(buf), 0);
 	strcpy_s(buf, "</TITLE></HEAD>\r\n");
@@ -103,10 +111,9 @@ void unsupported_method(int client) {
 }
 void not_found(int client) {
 	//to do
-	Header headernf(client, "", "NOTFOUND");
-	headernf.SendHeader();
+
 	char buff[1024];
-	/*
+	
 	
 	strcpy_s(buff, "HTTP/1.1 404 NOT FOUND\r\n");
 	send(client, buff, strlen(buff), 0);
@@ -118,7 +125,7 @@ void not_found(int client) {
 	
 	
 	send(client, buff, strlen(buff), 0);
-	*/
+	
 	strcpy_s(buff,
 		"<HTML>							\
 		<TITLE>NOT FOUND </TITLE>		\
@@ -139,8 +146,23 @@ const char* gethead_type(const char* fileName) {
 	else if (!strcmp(p, "js")) ret = "application/x-javascript";
 	return ret;
 	
+}
 
-
+void headers(int client, const char* ret) {
+	//send headers
+	char buff[1024];
+	strcpy_s(buff, "HTTP/1.1 200 OK\r\n");
+	send(client, buff, strlen(buff), 0);
+	strcpy_s(buff, "Server: tinyhttp/0.1\r\n");
+	send(client, buff, strlen(buff), 0);
+	char buf[1024];
+	sprintf_s(buf, "Content-Type:%s\r\n", ret);
+	//strcpy_s(buff, "Content-Type:application/octet-stream\n");
+	send(client, buf, strlen(buf), 0);
+	strcpy_s(buff, "Content-Disposition: inline\r\n");
+	send(client, buff, strlen(buff), 0);
+	strcpy_s(buff, "\r\n");
+	send(client, buff, strlen(buff), 0);
 }
 
 void cat(int client, FILE* resource) {
@@ -168,9 +190,9 @@ void cat(int client, FILE* resource) {
 	
 	printf("一共发送%d字节\n", count);
 	
-	
-
 }
+
+
 void server_file(int client, const char* fileName) {
 	//read headers and clean up
 	char buff[1024];
@@ -181,16 +203,11 @@ void server_file(int client, const char* fileName) {
 	
 	//read and send file
 	FILE* resource;
-	if (fopen_s(&resource, fileName, "rb") != 0) {
-		
-		
+	if (fopen_s(&resource, fileName, "rb") != 0) {		
 		not_found(client);
 	}
 	else {
-		string str(fileName);
-		//headers(client,gethead_type(fileName));
-		Header headers(client, str , "OK");
-		headers.SendHeader();
+		headers(client, gethead_type(fileName));
 		cat(client, resource);
 		printf("资源发送完毕！\n");
 	}
