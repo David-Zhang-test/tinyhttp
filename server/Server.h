@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SimpleServer.h"
+#include "../header.h"
 
 using namespace std;
 
