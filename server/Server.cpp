@@ -45,7 +45,7 @@ void Server::responder() {
 }
 
 void Server::launch() {
-	while (TRUE) {		
+	while (TRUE) {
 		accepter();
 		handler();
 		responder();

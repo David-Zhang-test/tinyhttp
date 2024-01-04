@@ -66,7 +66,7 @@ int startup(int* port) {
 
 }
 
-
+// Read File Line by Line
 int read_line(int sock, char* buff, int size) {
 	char c = 0;
 	int i = 0;
@@ -88,6 +88,8 @@ int read_line(int sock, char* buff, int size) {
 
 	return i;
 }
+
+// unsupported method == not "GET"
 void unsupported_method(int client) {
 	//to do
 	char buf[1024];
