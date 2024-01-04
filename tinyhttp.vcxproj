@@ -134,6 +134,7 @@
     <ClCompile Include="sendheader.cpp" />
     <ClCompile Include="server\Server.cpp" />
     <ClCompile Include="server\SimpleServer.cpp" />
+    <ClCompile Include="SimpleFile.cpp" />
     <ClCompile Include="sockets\BindingSocket.cpp" />
     <ClCompile Include="sockets\ConnectionSocket.cpp" />
     <ClCompile Include="sockets\ListeningSocket.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="sendheader.h" />
     <ClInclude Include="server\Server.h" />
     <ClInclude Include="server\SimpleServer.h" />
+    <ClInclude Include="SimpleFile.h" />
     <ClInclude Include="sockets\BindingSocket.h" />
     <ClInclude Include="sockets\ConnectionSocket.h" />
     <ClInclude Include="sockets\libc-sockets.h" />

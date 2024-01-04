@@ -23,11 +23,16 @@ void Server::accepter() {
 void Server::handler() {
 	ReadHeader header1(client_sock);		// call read_header constructor
 	string method = header1.get_method();
+	if (method.c_str() == "GET") {
+		cout << "function is get" << endl;
+	}
+	else {
+		cout << "not support" << endl;
+	}
 	
 }
 
 void Server::responder() {
-
 
 
 	closesocket(client_sock);

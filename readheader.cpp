@@ -3,10 +3,10 @@ using namespace std;
 
 
 ReadHeader::ReadHeader(int client) :Header(client) {
-	read();
+	readheader();
 }
 
-void ReadHeader::read() {
+void ReadHeader::readheader() {
 	buff_r.resize((const size_t)1024);		// read the first row
 	int number_char = read_line();
 

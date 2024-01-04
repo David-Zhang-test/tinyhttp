@@ -2,6 +2,7 @@
 
 #include "SimpleServer.h"
 #include "../libc-headers.h"
+#include"../SimpleFile.h"
 
 using namespace std;
 

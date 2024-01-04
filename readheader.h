@@ -10,7 +10,7 @@ public:
 	string get_method();
 	string get_path();
 private:
-	void read();
+	void readheader();
 	int read_line();
 	string buff_r;	// read header buff
 	string method;	// GET, POST, UNSUPPORTED

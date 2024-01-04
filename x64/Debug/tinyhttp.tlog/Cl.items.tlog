@@ -5,6 +5,7 @@ D:\github\CPlusStorage\tinyhttp\readheader.cpp;D:\github\CPlusStorage\tinyhttp\x
 D:\github\CPlusStorage\tinyhttp\sendheader.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\sendheader.obj
 D:\github\CPlusStorage\tinyhttp\server\Server.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\Server.obj
 D:\github\CPlusStorage\tinyhttp\server\SimpleServer.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\SimpleServer.obj
+D:\github\CPlusStorage\tinyhttp\SimpleFile.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\SimpleFile.obj
 D:\github\CPlusStorage\tinyhttp\sockets\BindingSocket.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\BindingSocket.obj
 D:\github\CPlusStorage\tinyhttp\sockets\ConnectionSocket.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\ConnectionSocket.obj
 D:\github\CPlusStorage\tinyhttp\sockets\ListeningSocket.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\ListeningSocket.obj

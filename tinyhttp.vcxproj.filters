@@ -51,6 +51,9 @@
     <ClCompile Include="readheader.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="SimpleFile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="libc-headers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
