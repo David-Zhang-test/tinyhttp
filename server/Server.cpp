@@ -10,11 +10,13 @@ Server::Server(int domain, int service, int protocol,
 }
 
 void Server::accepter() {
+	printf("the server has started, the port is: %d\n", server_port);
 	struct sockaddr_in address = get_socket()->get_address();
 	int address_len = sizeof(address);
-
-	printf("the server has started, the port is: %d\n", server_port);
 	client_sock = accept(get_socket()->get_sock(), (struct sockaddr*)&address, &address_len);
+
+	
+	
 	if (client_sock < 0) {
 		perror("client_sock");
 	}
@@ -23,7 +25,8 @@ void Server::accepter() {
 void Server::handler() {
 	ReadHeader header1(client_sock);		// call read_header constructor
 	string method = header1.get_method();
-	if (method.c_str() == "GET") {
+	path = header1.get_path();
+	if (method == "GET") {
 		cout << "function is get" << endl;
 	}
 	else {
@@ -33,17 +36,19 @@ void Server::handler() {
 }
 
 void Server::responder() {
-
-
+	SendHeader header_send(client_sock, path, "OK");
+	header_send.sendheader();
+	SimpleFile file1(client_sock, path);
+	shutdown(client_sock, SD_SEND);
 	closesocket(client_sock);
+	
 }
 
 void Server::launch() {
-	while (TRUE) {
+	while (TRUE) {		
 		accepter();
 		handler();
 		responder();
 	}
-	
 
 }

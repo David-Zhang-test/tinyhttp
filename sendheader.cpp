@@ -2,9 +2,9 @@
 using namespace std;
 
 
-SendHeader::SendHeader(int client, string fileName, string pagestate) :Header(client) {
-	fileName = fileName;
-	pagestate = pagestate;
+SendHeader::SendHeader(int client, string fileName1, string pagestate1) :Header(client) {
+	fileName = fileName1;
+	pagestate = pagestate1;
 
 	get_HeadType(fileName);
 }
@@ -31,10 +31,10 @@ void SendHeader::sendheader() {
 	if (pagestate == "OK") {
 		strcpy_s(buff, "HTTP/1.1 200 OK\r\n");
 	}
-	else if (pagestate == "NOTFOUND") {
+	else if (pagestate.c_str() == "NOTFOUND") {
 		strcpy_s(buff, "HTTP/1.1 404 NOT FOUND\r\n");
 	}
-	else if (pagestate == "UNSUPPORTED") {
+	else if (pagestate.c_str() == "UNSUPPORTED") {
 		strcpy_s(buff, "HTTP/1.1 501 Method Not Implemented\r\n");
 	}
 	send(client, buff, strlen(buff), 0);

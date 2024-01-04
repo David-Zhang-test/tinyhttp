@@ -16,4 +16,5 @@ private:
 	void responder();
 	int client_sock;
 	int server_port;
+	string path;
 };

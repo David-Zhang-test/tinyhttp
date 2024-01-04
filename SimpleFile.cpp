@@ -5,19 +5,19 @@ using namespace std;
 SimpleFile::SimpleFile(int client, string fileName) :client(client) {
 	int ret = fopen_s(&resource, fileName.c_str(), "rb");
 	if (ret < 0) {
-		NotFound(client);
+		NotFound();
 	}
 	else {
-		SendFile(client, resource);
+		SendFile();
 	}
 }
 
-
+/*
 SimpleFile::~SimpleFile() {
 	fclose(resource);
-}
+}*/
 
-void SimpleFile::SendFile(int client, FILE* resource) {
+void SimpleFile::SendFile() {
 	char buff[4096];
 	int count = 0;
 	while (1) {
@@ -37,8 +37,9 @@ void SimpleFile::SendFile(int client, FILE* resource) {
 	}
 
 	printf("一共发送%d字节\n", count);
+	fclose(resource);
 }
 
-void SimpleFile::NotFound(int client) {
+void SimpleFile::NotFound() {
 	cout << "to do" << endl;
 }

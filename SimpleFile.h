@@ -9,9 +9,9 @@ using namespace std;
 class SimpleFile {
 public:
 	SimpleFile(int client, string fileName);
-	~SimpleFile();
-	void NotFound(int client);
-	void SendFile(int client, FILE* resource);
+	//~SimpleFile();
+	void NotFound();
+	void SendFile();
 
 
 private:
