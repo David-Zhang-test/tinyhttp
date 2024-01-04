@@ -45,6 +45,12 @@
     <ClCompile Include="server\Server.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="sendheader.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="readheader.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
@@ -72,6 +78,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="server\Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sendheader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="readheader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libc-headers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

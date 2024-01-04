@@ -1,5 +1,8 @@
 #include "Server.h"
 #include <iostream>
+
+using namespace std;
+
 Server::Server(int domain, int service, int protocol,
 	int port, u_long interface_s, int bklg) : SimpleServer(domain, service, protocol, port, interface_s, bklg) {
 	server_port = port;
@@ -18,14 +21,15 @@ void Server::accepter() {
 }
 
 void Server::handler() {
-
-	Header header1(client_sock);
+	ReadHeader header1(client_sock);		// call read_header constructor
+	string method = header1.get_method();
 	
-
-
 }
 
 void Server::responder() {
+
+
+
 	closesocket(client_sock);
 }
 

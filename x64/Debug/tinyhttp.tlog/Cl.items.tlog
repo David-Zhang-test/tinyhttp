@@ -1,6 +1,8 @@
 D:\github\CPlusStorage\tinyhttp\header.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\header.obj
 D:\github\CPlusStorage\tinyhttp\log.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\log.obj
 D:\github\CPlusStorage\tinyhttp\Main.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\Main.obj
+D:\github\CPlusStorage\tinyhttp\readheader.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\readheader.obj
+D:\github\CPlusStorage\tinyhttp\sendheader.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\sendheader.obj
 D:\github\CPlusStorage\tinyhttp\server\Server.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\Server.obj
 D:\github\CPlusStorage\tinyhttp\server\SimpleServer.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\SimpleServer.obj
 D:\github\CPlusStorage\tinyhttp\sockets\BindingSocket.cpp;D:\github\CPlusStorage\tinyhttp\x64\Debug\BindingSocket.obj

@@ -130,6 +130,8 @@
     <ClCompile Include="header.cpp" />
     <ClCompile Include="log.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="readheader.cpp" />
+    <ClCompile Include="sendheader.cpp" />
     <ClCompile Include="server\Server.cpp" />
     <ClCompile Include="server\SimpleServer.cpp" />
     <ClCompile Include="sockets\BindingSocket.cpp" />
@@ -140,7 +142,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h" />
+    <ClInclude Include="libc-headers.h" />
     <ClInclude Include="log.h" />
+    <ClInclude Include="readheader.h" />
+    <ClInclude Include="sendheader.h" />
     <ClInclude Include="server\Server.h" />
     <ClInclude Include="server\SimpleServer.h" />
     <ClInclude Include="sockets\BindingSocket.h" />

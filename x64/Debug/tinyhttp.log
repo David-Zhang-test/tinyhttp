@@ -1,33 +1,14 @@
-﻿  Source.cpp
-D:\github\CPlusStorage\tinyhttp\Source.cpp(37,22): warning C4244: 'initializing': conversion from 'SOCKET' to 'INT32', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(96,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(98,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(100,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(102,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(104,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(106,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(108,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(110,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(119,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(121,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(123,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(127,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(135,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(155,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(157,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(161,26): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(163,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(165,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(176,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(222,13): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(291,19): warning C4244: 'initializing': conversion from 'SOCKET' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\Source.cpp(295,38): warning C4312: 'type cast': conversion from 'int' to 'void *' of greater size
+﻿  Main.cpp
   header.cpp
-D:\github\CPlusStorage\tinyhttp\header.cpp(40,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\header.cpp(44,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\header.cpp(48,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\header.cpp(52,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\header.cpp(62,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\github\CPlusStorage\tinyhttp\header.cpp(67,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  readheader.cpp
+D:\github\CPlusStorage\tinyhttp\readheader.cpp(14,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\readheader.cpp(19,28): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  sendheader.cpp
+D:\github\CPlusStorage\tinyhttp\sendheader.cpp(40,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\sendheader.cpp(44,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\sendheader.cpp(48,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\github\CPlusStorage\tinyhttp\sendheader.cpp(52,27): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Server.cpp
+D:\github\CPlusStorage\tinyhttp\server\Server.cpp(14,22): warning C4244: '=': conversion from 'SOCKET' to 'int', possible loss of data
   Generating Code...
   tinyhttp.vcxproj -> D:\github\CPlusStorage\tinyhttp\x64\Debug\tinyhttp.exe
