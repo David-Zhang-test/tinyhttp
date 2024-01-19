@@ -6,6 +6,7 @@ ReadHeader::ReadHeader(int client) :Header(client) {
 	readheader();
 }
 
+// read header function
 void ReadHeader::readheader() {
 	buff_r.resize((const size_t)1024);		// read the first row
 	int number_char = read_line();
@@ -40,6 +41,8 @@ void ReadHeader::readheader() {
 		}
 	}
 }
+
+// read line function
 int ReadHeader::read_line() {
 	int i = 0;
 	char c = '0';
@@ -58,6 +61,7 @@ int ReadHeader::read_line() {
 	return i;
 }
 
+// getter function
 string ReadHeader::get_method() {
 	return method;
 }

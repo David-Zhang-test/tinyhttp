@@ -2,6 +2,7 @@
 
 SimpleServer::SimpleServer(int domain, int service, int protocol, int port, u_long interface_s, int bklg) {
 	socket = new ListeningSocket(domain, service, protocol, port, interface_s, bklg);
+	// try on random port by assigning port to 0
 	/*
 	if (port == 0) {
 		random_port();
@@ -14,6 +15,8 @@ SimpleServer::SimpleServer(int domain, int service, int protocol, int port, u_lo
 	*/
 
 }
+
+// getter function
 ListeningSocket* SimpleServer::get_socket() {
 	return socket;
 }

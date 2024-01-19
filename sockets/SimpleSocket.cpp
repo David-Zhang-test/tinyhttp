@@ -1,18 +1,19 @@
 #include "SimpleSocket.h"
 
 
-//default constructor
+// constructor
 SimpleSocket::SimpleSocket(int domain, int service, int protocol, int port, u_long interface_s) {
 	// initialize wsadata
 	WSADATA data;
 	int ret = WSAStartup(MAKEWORD(1, 1), &data);
 	if (ret != 0) { perror("WSAStartup"); }
-	//define address
+
+	// define address
 	address.sin_addr.s_addr = htonl(interface_s);
 	address.sin_family = domain;
 	address.sin_port = htons(port);
 
-	//establish connection
+	// establish connection
 	sock = socket(domain, service, protocol);
 	test_if_connect(sock);
 	
@@ -27,7 +28,7 @@ void SimpleSocket::test_if_connect(int test_item) {
 	}
 }
 
-//get value functions
+// get value functions
 struct sockaddr_in SimpleSocket::get_address() {
 	return address;
 }
@@ -37,6 +38,8 @@ int SimpleSocket::get_sock() {
 int SimpleSocket::get_connection() {
 	return connection;
 }
+
+// set connection function
 void SimpleSocket::set_connection(int cons) {
 	connection = cons;
 }

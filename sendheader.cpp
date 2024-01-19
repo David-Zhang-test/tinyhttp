@@ -1,12 +1,14 @@
 #include"sendheader.h"
 using namespace std;
 
-
+// send header constructor
 SendHeader::SendHeader(int client, string fileName1, string pagestate1) :Header(client) {
-	fileName = fileName1;
+	// there was and error, fileName = fileName is and invalid expression, that Cpp will ignore it.
+	fileName = fileName1;	
 	pagestate = pagestate1;
 
-	get_HeadType(fileName);
+	// call the get type function, and the type will be saved
+	get_HeadType(fileName);	
 }
 
 const void SendHeader::get_HeadType(string fileName) {
@@ -26,7 +28,7 @@ void SendHeader::sendheader() {
 	// 2.what filetype is it
 	// 3.send
 
-	// 1.send pagestate
+	// send pagestate
 	char buff[1024];
 	if (pagestate == "OK") {
 		strcpy_s(buff, "HTTP/1.1 200 OK\r\n");
@@ -39,15 +41,15 @@ void SendHeader::sendheader() {
 	}
 	send(client, buff, strlen(buff), 0);
 
-	// 2.send server name
+	// send server name
 	strcpy_s(buff, "Server: tinyhttp/0.1\r\n");
 	send(client, buff, strlen(buff), 0);
 
-	// 3.send content type
+	// send content type
 	sprintf_s(buff, "Content-Type:%s\r\n", HeadType.c_str());
 	send(client, buff, strlen(buff), 0);
 
-	// 4.send end
+	// send end
 	strcpy_s(buff, "\r\n");
 	send(client, buff, strlen(buff), 0);
 }

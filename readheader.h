@@ -5,8 +5,10 @@ using namespace std;
 
 class ReadHeader : public Header {
 public:
+	// constructor
 	ReadHeader(int client);
 	
+	// getter function
 	string get_method();
 	string get_path();
 private:

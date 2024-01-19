@@ -9,7 +9,7 @@
 // 
 
 
-// Include
+// Include headers
 
 #include<stdio.h>
 #include<sys/types.h>
@@ -42,24 +42,24 @@ int startup(int* port) {
 	ret = setsockopt(server_socket, SOL_SOCKET, SO_REUSEADDR, (const char*)&opt, sizeof(opt));
 	if (ret == -1) { error_die("setsocketopt"); }
 
-	//config server network
+	// config server network
 	struct sockaddr_in server_addr;
 	memset(&server_addr, 0, sizeof(server_addr));
 	server_addr.sin_family = AF_INET;
 	server_addr.sin_port = htons(*port);
 	server_addr.sin_addr.s_addr = htonl(INADDR_ANY);
 
-	//bind socket
+	// bind socket
 	if (bind(server_socket, (const sockaddr*)&server_addr, sizeof(server_addr)) < 0) { error_die("bind"); }
 
-	//dynamic port
+	// dynamic port
 	INT32 nameLen = sizeof(server_addr);
 	if (*port == 0) {
 		if (getsockname(server_socket, (struct sockaddr*)&server_addr, &nameLen) < 0) { error_die("getsockname"); }
 		*port = server_addr.sin_port;
 	}
 	
-	//listen port
+	// listen port
 	if (listen(server_socket, 5) < 0) { error_die("listen"); }
 	
 	return server_socket;
@@ -91,7 +91,7 @@ int read_line(int sock, char* buff, int size) {
 
 // unsupported method == not "GET"
 void unsupported_method(int client) {
-	//to do
+	
 	char buf[1024];
 
 	strcpy_s(buf, "HTTP/1.0 501 Method Not Implemented\r\n");
@@ -112,7 +112,7 @@ void unsupported_method(int client) {
 	send(client, buf, strlen(buf), 0);
 }
 void not_found(int client) {
-	//to do
+	
 
 	char buff[1024];
 	
@@ -151,7 +151,7 @@ const char* gethead_type(const char* fileName) {
 }
 
 void headers(int client, const char* ret) {
-	//send headers
+	// send headers
 	char buff[1024];
 	strcpy_s(buff, "HTTP/1.1 200 OK\r\n");
 	send(client, buff, strlen(buff), 0);
@@ -168,7 +168,7 @@ void headers(int client, const char* ret) {
 }
 
 void cat(int client, FILE* resource) {
-	//send file
+	// send file
 	char buff[4096];
 
 	int count = 0;
@@ -196,14 +196,14 @@ void cat(int client, FILE* resource) {
 
 
 void server_file(int client, const char* fileName) {
-	//read headers and clean up
+	// read headers and clean up
 	char buff[1024];
 	int number_char = 1;
 	while (number_char > 0 && strcmp(buff, "\n")) {
 		read_line(client, buff, sizeof(buff));
 	}
 	
-	//read and send file
+	// read and send file
 	FILE* resource;
 	if (fopen_s(&resource, fileName, "rb") != 0) {		
 		not_found(client);
@@ -220,12 +220,12 @@ void server_file(int client, const char* fileName) {
 }
 //thread 
 DWORD WINAPI accept_request(LPVOID arg) {
-	char buff[1024]; //all request data
+	char buff[1024]; // all request data
 	int client = (SOCKET)arg;
 	int number_char = read_line(client, buff, sizeof(buff));
 	PRINTF(buff);
 
-	//resolve data method
+	// resolve data method
 	char method[255];
 	int i = 0, j = 0;
 	while (!isspace(buff[j])) {
@@ -240,7 +240,7 @@ DWORD WINAPI accept_request(LPVOID arg) {
 
 	}
 
-	//resolve data url
+	// resolve data url
 	char url[255];
 	i = 0;
 	while (isspace(buff[j]) && j < sizeof(buff)) { //jump ' '
@@ -253,21 +253,23 @@ DWORD WINAPI accept_request(LPVOID arg) {
 	PRINTF(url);
 
 
-	//connect path and url
+	// connect path and url
 	char path[512] = "";
 	sprintf_s(path, "htm%s", url);
 	if (path[strlen(path) - 1] == '/') {
 		strcat_s(path, "index.html");
 	}
 	struct stat status;
-	if(stat(path,&status) == -1){ //if not found, clear up the memory and print out not found
+	// if not found, clear up the memory and print out not found
+	if(stat(path,&status) == -1){ 
 		while (number_char>0 && strcmp(buff,"\n")) {
 			read_line(client, buff, sizeof(buff));
 		}
 		
 		not_found(client);
 	}
-	else { //if found, connect index.html
+	// if found, connect index.html
+	else { 
 		if ((status.st_mode & S_IFMT) == S_IFDIR) {
 			strcat_s(path, "/index.html");
 		}
@@ -281,12 +283,12 @@ DWORD WINAPI accept_request(LPVOID arg) {
 }
 
 int main1() {
-	//starting http server
+	// starting http server
 	int port = 80;
 	int server_sock = startup(&port);
 	printf("http服务已经启动，正在监听%d端口", port);
 
-	//
+	// connect client
 	struct sockaddr_in client_addr;
 	int client_addr_len = sizeof(client_addr);
 	while (1) {
@@ -297,8 +299,6 @@ int main1() {
 		CreateThread(0, 0, accept_request, (void*)client_sock, 0, &threadId);
 	}
 	closesocket(server_sock);
-
-
 
 
 	return 0;
