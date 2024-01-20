@@ -2,7 +2,7 @@
 
 ## Introduction
 This is a tiny webserver using C++, very **simple, weak and vulnerable**. It's not for production but study!
-With socket, thread, it can perform static webpages well. But without cgi, it's still not available to answer POST, so dynamic webpages(x). The original model is tinyhttp(https://tinyhttpd.sourceforge.net/)a lite httpserver written by James David in 1999.
+With socket, thread, it can perform static webpages well. But without cgi, it's still not available to answer POST, so dynamic webpages(x). The original model is tinyhttp(https://tinyhttpd.sourceforge.net/) a lite httpserver written by James David in 1999.
 This program is my first step to backend web programming, which I'm really interested and have written lots of frontend pages. The program also servers as my program design course's assignment (use C++ to create whatever you like, lines>=1500), though not the initial reason why I write this, it gives me the motivation to start. I have gained lots of knowledge in this program, and deeper my understanding of OOP. 
 
 
